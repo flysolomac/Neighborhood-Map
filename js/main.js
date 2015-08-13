@@ -353,6 +353,15 @@ function makeYelpList(d) {
       makeEl += '<p><strong>' + ph + '</strong></p>';
       makeEl += '<p><a class="btn btn-default btn-large" href="' + url + '" target="_blank">Yelp it!</a></p>';
       makeEl += '</div></div></li>';
+      var imgFail = $('#imgFail').attr("src");
+     if ( !imgFail) {
+    /*
+     *	If img source is returned undefined 
+     */
+
+    $('#imgFail').attr("src", "http://tinyurl.com/imgFail");
+
+   } 
 
       /*
        *	add to the el variable
@@ -381,15 +390,7 @@ function makeYelpList(d) {
      *	then create a error message
      */
   }
-  var imgFail = $('#imgFail').find("src");
-  else if ((typeof imgFail) !== 'string') {
-    /*
-     *	If img source is returned undefined 
-     */
-
-    $('#imgFail').attr("src", "http://tinyurl.com/imgFail");
-
-  } else {
+else {
     var searchedFor = $('input').val();
     $yelpList.addClass('open').append('<li><h3>Oops! We can\'t find anything on <span>' + searchedFor + '</span>.</h3><p>Search something else.</p></li>');
     /*
