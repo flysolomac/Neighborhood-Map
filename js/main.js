@@ -194,7 +194,7 @@ function addGoogleMapsMarkers(m) {
         // get index of clicked element
         var pos = $(this).index();
         // iterate through allMarkers array
-        for ( var am in allMarkers) {
+        for (var am in allMarkers) {
             var isMoving = allMarkers[am].getAnimation();
             // if marker is animated, remove animation
             if (isMoving && am !== pos) {
@@ -380,6 +380,14 @@ function makeYelpList(d) {
          *	If no data is returned,
          *	then create a error message
          */
+    } else if (typeof imgFail !== 'string') {
+        /*
+         *	If img source is returned undefined 
+         */
+
+        var imgFail = $('div').find('img').attr("src");
+        $('div').find('img').attr("src", "http://tinyurl.com/imgFail");
+
     } else {
         var searchedFor = $('input').val();
         $yelpList.addClass('open').append('<li><h3>Oops! We can\'t find anything on <span>' + searchedFor + '</span>.</h3><p>Search something else.</p></li>');
