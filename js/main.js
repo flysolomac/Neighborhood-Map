@@ -353,8 +353,9 @@ function makeYelpList(d) {
       makeEl += '<p><strong>' + ph + '</strong></p>';
       makeEl += '<p><a class="btn btn-default btn-large" href="' + url + '" target="_blank">Yelp it!</a></p>';
       makeEl += '</div></div></li>';
-      var $imgFail = $('#imgFail').attr("src");
-     if ( !$imgFail) {
+      var $imgFail = $('#imgFail');
+      var src = $imgFail.attr("src");
+      if (src == 'undefined' || src == 'null'){
     /*
      *	If img source is returned undefined 
      */
