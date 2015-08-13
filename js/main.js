@@ -356,7 +356,7 @@ function makeYelpList(d) {
       
       var src = $('.image-thumbnail').attr("src");
       console.log(src);
-      if (src === undefined || src === null){
+      if (src !=== 'string'){
     /*
      *	If img source is returned undefined 
      */
