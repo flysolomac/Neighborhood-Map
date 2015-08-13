@@ -345,7 +345,7 @@ function makeYelpList(d) {
        *	create the Dom object
        */
       var makeEl = '<li><div class="heading row"><p class="col-sm-3 img-container">';
-      makeEl += '<img id="imgFail" src="' + img + '" height=125 width=125 class="img-thumbnail">';
+      makeEl += '<img src="' + img + '" height=125 width=125 class="img-thumbnail">';
       makeEl += '<img src="' + stars + '" height=17 width=84 alt="Yelp Rating">';
       makeEl += '</p><div class="col-sm-9">';
       makeEl += '<h3>' + name + '</h3><p>';
@@ -353,14 +353,15 @@ function makeYelpList(d) {
       makeEl += '<p><strong>' + ph + '</strong></p>';
       makeEl += '<p><a class="btn btn-default btn-large" href="' + url + '" target="_blank">Yelp it!</a></p>';
       makeEl += '</div></div></li>';
-      var $imgFail = $('#imgFail');
-      var src = $imgFail.attr("src");
+      
+      var src = $yelpList.find('img').attr("src");
       if (src == 'undefined' || src == 'null'){
     /*
      *	If img source is returned undefined 
      */
 
-    $('#imgFail').attr("src", "http://tinyurl.com/imgFail");
+    $yelpList.find('img').attr("src", "http://tinyurl.com/imgFail");
+                   
 
    } 
 
