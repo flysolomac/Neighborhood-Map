@@ -21,7 +21,7 @@ function yelpViewModel() {
          */
         ko.computed(function() {
             yelpCall('30308', self.searchTerm());
-        }, self);
+        }, self)
     }
 }
 
