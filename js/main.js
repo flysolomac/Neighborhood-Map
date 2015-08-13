@@ -354,13 +354,13 @@ function makeYelpList(d) {
       makeEl += '<p><a class="btn btn-default btn-large" href="' + url + '" target="_blank">Yelp it!</a></p>';
       makeEl += '</div></div></li>';
       
-      var src = $yelpList.find('img').attr("src");
+      var src = $yelpList.find('li').find('img').attr("src");
       if (src == 'undefined' || src == 'null'){
     /*
      *	If img source is returned undefined 
      */
 
-    $yelpList.find('img').attr("src", "http://tinyurl.com/imgFail");
+    $yelpList.find('li').find('img').attr("src", "http://tinyurl.com/imgFail");
                    
 
    } 
