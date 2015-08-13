@@ -126,7 +126,7 @@ function addGoogleMapsMarkers(m) {
                 return function() {
                     makeInfoWindow(mk);
                     toggleBounce(mk, i);
-                }
+                };
             })(mkr, i));
     }
 
@@ -148,7 +148,7 @@ function addGoogleMapsMarkers(m) {
          * also remove the show className from the yelp-list ul dom to slide left
          * also remove the active className from the active yelp-list ul li dom
          */
-        if (mk.getAnimation() != null) {
+        if (mk.getAnimation() !== null) {
             /*  mk.setAnimation(null);
 	    yelpMarkerDetailUl.removeClass('show');
 	    activeYelpMarkerDetail.removeClass('active');*/
@@ -160,7 +160,7 @@ function addGoogleMapsMarkers(m) {
              * also add the active className to the yelp-list ul li dom
              */
         } else {
-            for (am in allMarkers) {
+            for (var am in allMarkers) {
                 // iterate through all the markers and see if it has the animation attribute
                 var isMoving = allMarkers[am].getAnimation();
                 /*
@@ -194,7 +194,7 @@ function addGoogleMapsMarkers(m) {
         // get index of clicked element
         var pos = $(this).index();
         // iterate through allMarkers array
-        for (am in allMarkers) {
+        for ( var am in allMarkers) {
             var isMoving = allMarkers[am].getAnimation();
             // if marker is animated, remove animation
             if (isMoving && am !== pos) {
@@ -323,7 +323,7 @@ function makeYelpList(d) {
          *	loop through the returned data
          *	then create the variable for to use in populating the yelp-list li Dom
          */
-        for (result in results) {
+        for (var result in results) {
             var business = results[result],
                 name = business.name,
                 img = business.image_url,
