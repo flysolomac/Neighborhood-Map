@@ -323,6 +323,7 @@ function makeYelpList(d) {
          *	loop through the returned data
          *	then create the variable for to use in populating the yelp-list li Dom
          */
+         console.log(results);
         for (var result in results) {
             var business = results[result],
                 name = business.name,
