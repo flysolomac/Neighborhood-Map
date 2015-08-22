@@ -15,20 +15,22 @@
 </head>
 
 <body>
-
-  <div class="yelp-list">
-    <div class="search-yelp">
+<div id="1">
+  <div id="2" class="yelp-list">
+    <div id="3"class="search-yelp">
       <form class="input-group" data-bind="submit: updateYelpResults">
         <input id="searchTerm" type="text" class="form-control" data-bind="value: searchTerm">
         <span class="input-group-btn">
 		        <button class="btn btn-danger" type="button" data-bind="click: updateYelpResults">Search</button>
 		      </span>
       </form>
-    </div>
-    <ul id="list" class="results"></ul>
-  </div>
+    </div id="3">
+    <div id="4"><ul id="list" class="results"></ul></div>
+     <div id="map-canvas"></div>
+  </div id="2">
 
-  <div id="map-canvas"></div>
+ 
+  </div id="1">
 
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
   <script src="frame/knockout/dist/knockout.js"></script>
