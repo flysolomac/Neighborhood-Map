@@ -89,6 +89,7 @@ function addGoogleMapsMarkers(m) {
   /*
    * Loop through our array of markers & place each one on the map
    */
+   
   for (var i = 0, max = m.length; i < max; i++) {
     // create the position object
     var position = new google.maps.LatLng(m[i][2], m[i][3]);
@@ -323,6 +324,7 @@ function makeYelpList(d) {
      *	loop through the returned data
      *	then create the variable for to use in populating the yelp-list li Dom
      */
+     console.log(results);
     for (var result in results) {
       var business = results[result],
         name = business.name,
