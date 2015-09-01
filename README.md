@@ -1,6 +1,6 @@
 ## Frontend Nanodegree Neighborhood Map Project
 
-Project 5 can be viewed:
+Project 5 can be viewed/run : http://flysolomac.github.io/Neighborhood-Map/
 
 Used Google Maps API and Yelp API in order to render neighboorhood map. Knockout framework was used to bind data while bootstrap was used to style page.
 
