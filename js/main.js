@@ -247,6 +247,9 @@ function yelpCall(searchNear, searchFor) {
      *	Create a array object "parameter" to pass on "message" JSON object
      */
     var parameters = [];
+
+
+
     parameters.push(['term', searchFor]);
     parameters.push(['location', searchNear]);
     parameters.push(['callback', 'cb']);
@@ -323,7 +326,7 @@ function makeYelpList(d) {
          *	loop through the returned data
          *	then create the variable for to use in populating the yelp-list li Dom
          */
-         console.log(results);
+        console.log(results);
         for (var result in results) {
             var business = results[result],
                 name = business.name,
@@ -347,10 +350,10 @@ function makeYelpList(d) {
              */
             function good(im) {
                 if (im === undefined) {
-                    return '<img alt="proof" src="' + 'http://tinyurl.com/imgFail' + '" height=125 width=125 class="img-thumbnail" >'
+                    return 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQlE1SvwjHv29Piax6t6qSjCCzWDUX3kVCasv4gr5_gGVXPULR3';
 
                 } else {
-                    return '<img alt="proof" src="' + im + '" height=125 width=125 class="img-thumbnail" >'
+                    return im;
                 }
             };
             var imgPlace = good(img);
@@ -359,7 +362,7 @@ function makeYelpList(d) {
              *	create the Dom object
              */
             var makeEl = '<li><div class="heading row"><p class="col-sm-3 img-container">';
-            makeEl += imgPlace;
+            makeEl += '<img alt="proof" src="' + imgPlace + '" height=125 width=125 class="img-thumbnail" >';
             makeEl += '<img id="proof" src="' + stars + '" height=17 width=84 alt="Yelp Rating">';
             makeEl += '</p><div class="col-sm-9">';
             makeEl += '<h3>' + name + '</h3><p>';
