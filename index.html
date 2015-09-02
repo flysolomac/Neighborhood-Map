@@ -2,43 +2,63 @@
 <html class="no-js" lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Mackenzie Neighborhood Map Project - P5 </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Mackenzie Neighborhood Map Project - P5 </title>
 
-  <link href="frame/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="frame/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href="css/style.css" rel="stylesheet">
+    <link href="frame/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="frame/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
-<div id="1">
-  <div id="2" class="yelp-list">
-    <div id="3"class="search-yelp">
-      <form class="input-group" data-bind="submit: updateYelpResults">
-        <input id="searchTerm" type="text" class="form-control" data-bind="value: searchTerm">
-        <span class="input-group-btn">
-		        <button class="btn btn-danger" type="button" data-bind="click: updateYelpResults">Search</button>
+
+    <div class="yelp-list">
+        <!--
+<div class="search-yelp">
+            <form class="input-group" data-bind="submit: updateYelpResults" class="form-inline">
+  <div class="form-group">
+    <label for="exampleInputName2">Name</label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail2">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+  </div>
+  <button type="submit" class="btn btn-default">Send invitation</button>
+</form>
+            </div>
+        </div>
+            -->
+
+
+        <div class="search-yelp">
+            <form class="input-group" data-bind="submit: updateYelpResults">
+                <input id="searchTerm" type="text" class="form-control" data-bind="value: searchTerm">
+                <span class="input-group-btn">
+		        <button id="rate" class="btn btn-danger" type="button" data-bind="click: updateYelpResults">Distance</button>
+                  <button id="rate" class="btn btn-danger" type="button" data-bind="click: sortRate">Ratings: High > Low</button>
 		      </span>
-      </form>
-    </div id="3">
-    <div id="4"><ul id="list" class="results"></ul></div>
-     <div id="map-canvas"></div>
-  </div id="2">
+            </form>
+        </div>
 
- 
-  </div id="1">
+        <ul id="list" class="results"></ul>
+    </div>
 
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
-  <script src="frame/knockout/dist/knockout.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-  <script src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
-  <script src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/function.js"></script>
+
+    <div id="map-canvas"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    <script src="frame/knockout/dist/knockout.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
+    <script src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/sortRating.js"></script>
 </body>
 
 </html>
