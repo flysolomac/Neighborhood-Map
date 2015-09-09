@@ -464,7 +464,7 @@ function sortFavorite() {
         makeEl += '<span>' + loc.address + '</span></p>';
         makeEl += '<p><strong>' + ph + '</strong></p>';
         makeEl += '<p><a class="btn btn-default btn-large" href="' + url + '" target="_blank">Yelp it!</a></p>';
-        makeEl += '<h4><strong>My Rating: </strong><img src="' + stars + '" height=125 width=125 class="img-thumbnail"></h4>';
+        makeEl += '<h4><strong>My Rating: </strong><img src="' + stars + '" height=150 width=125 class="img-thumbnail"></h4>';
         makeEl += '</div></div></li>';
 
         /*
