@@ -333,7 +333,7 @@ function makeYelpList(d) {
                 img = business.image_url,
                 ph = business.display_phone,
                 url = business.url,
-                stars = business.rating_img_url_small,
+                stars = business.rating_img_url_large,
                 rate = business.rating,
                 loc = {
                     lat: business.location.coordinate.latitude,
@@ -406,6 +406,102 @@ function makeYelpList(d) {
          */
         google.maps.event.addDomListener(window, 'load', addGoogleMapsMarkers(markers));
     }
+}
+
+function sortFavorite() {
+    function check() {
+        document.getElementById('searchTerm').value = 'My Favortie Places'
+    }
+    check();
+
+    /*
+     *	Create the variable 
+     */
+    var $yelpLisst = $('.results');
+    results = myFavorite();
+    el = '';
+
+    /*
+     *	Clear the yelpList to add new entries
+     */
+    $yelpLisst.empty();
+
+    /*
+     *	Create the markers Array object
+     */
+    var markers = [];
+
+    /*
+     *	If no data is returned
+     */
+
+    for (j = 0; j < results.length; j++) {
+        var business = results[j],
+
+            name = business.name,
+            img = business.img,
+            ph = business.ph,
+            url = business.url,
+            stars = business.stars,
+            rate = business.rate,
+            loc = {
+                lat: business.loc.lat,
+                lon: business.loc.lng,
+                address: business.loc.address.line1 + '<br>' + business.loc.address.line2
+            },
+            review = {
+                img: business.review.img,
+                txt: business.review.txt,
+            };
+
+        /*
+         *	create the Dom object
+         */
+        makeEl = '<li><div class="heading row"><p class="col-sm-3 img-container">';
+        makeEl += '<img alt="proof" src="' + img + '" height=125 width=125 class="img-thumbnail" >';
+        makeEl += '</p><div class="col-sm-9">';
+        makeEl += '<h3>' + name + '</h3><p>';
+        makeEl += '<span>' + loc.address + '</span></p>';
+        makeEl += '<p><strong>' + ph + '</strong></p>';
+        makeEl += '<p><a class="btn btn-default btn-large" href="' + url + '" target="_blank">Yelp it!</a></p>';
+        makeEl += '<h4><strong>My Rating: </strong><img src="' + stars + '" height=125 width=125 class="img-thumbnail"></h4>';
+        makeEl += '</div></div></li>';
+
+        /*
+         *	add to the el variable
+         */
+        el += makeEl;
+
+        /*
+         *	create the marker array object
+         *	then add marker to the markers array object
+         */
+        var marker = [name, ph, loc.lat, loc.lon, review.img, review.txt];
+        markers.push(marker);
+
+        /*
+         *	Use google map api to create the markers to place on the map
+         */
+        google.maps.event.addDomListener(window, 'load', addGoogleMapsMarkers(markers));
+
+    }
+    console.log(markers);
+
+
+    /*
+     *	add the el to the yelp-list ul dom
+     */
+    $yelpLisst.append(el);
+
+    /*
+     *	Use google map api to create the markers to place on the map
+     */
+
+
+    /*
+     *	If no data is returned,
+     *	then create a error message
+     */
 }
 
 /*
