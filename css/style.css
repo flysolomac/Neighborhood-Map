@@ -2,14 +2,13 @@
 body,
 html,
 #map-canvas {
-    margin: 0
-    margin-left:20%;
+    margin: 0 margin-left: 20%;
 }
 #map-canvas {
-    float:right;
+    float: right;
     height: 100vh;
     width: 100vw;
-    padding:30%;
+    padding: 30%;
 }
 }
 h1 {
@@ -26,15 +25,13 @@ h1 {
     background-color: rgba(255, 255, 255, 0.65)
 }
 .yelp-list ul,
-.search-yelp 
-{
+.search-yelp {
     position: fixed;
     top: 0;
     left: 0;
     width: 400px;
     background-color: rgba(255, 255, 255, 0.85)
 }
-
 @media (max-width: 500px) {
     .yelp-list ul,
     .search-yelp {
@@ -68,10 +65,10 @@ h1 {
     font-weight: 400;
     line-height: 1.42em;
     margin-top: 0;
-    color: #F52222
+    color: #f52222
 }
 .yelp-list ul h3 span {
-    border-bottom: 1px solid #ff4e00
+    border-bottom: 1px solid #ff4e00;
 }
 .yelp-list ul p span {
     display: block
@@ -103,30 +100,28 @@ h1 {
 #list::-webkit-scrollbar {
     display: none;
 }
-#searchTerm{
-    font-size:20px; 
-    text-align:center; 
-    font-weight:bold;
-    float:left;
+#searchTerm {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    float: left;
     text-transform: capitalize
 }
-#zipTerm{
-    font-size:20px; 
-    text-align:right; 
-    font-weight:bold
-    width:30%
-    
+#zipTerm {
+    font-size: 20px;
+    text-align: right;
+    font-weight: bold width: 30%
 }
 .search-yelp {
     padding: 20px;
     z-index: 10;
-    width:100%;
+    width: 100%;
     background-color: rgba(119, 119, 119, 1)
 }
 .zipCode {
     padding: 20px;
     z-index: 10;
-    width:-30%;
+    width: -30%;
     background-color: rgba(119, 119, 119, 1)
 }
 .search-yelp small {
